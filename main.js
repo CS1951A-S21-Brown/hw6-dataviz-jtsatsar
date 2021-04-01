@@ -30,7 +30,7 @@ let y_axis_text = svg.append("text")
             .style("opacity", 0);
 
 
-d3.csv("../data/new_video_games.csv").then(function(data) {
+d3.csv("./data/new_video_games.csv").then(function(data) {
 
     data = cleanData(data,
       function(a, b) {
@@ -139,13 +139,13 @@ let svg2 = d3.select("#graph2")
       .style("margin-left", -1000)
       .style("font-size", 15);
 
-d3.csv("../data/new_video_games.csv").then(function(data2) {
+d3.csv("./data/new_video_games.csv").then(function(data2) {
     data2 = cleanData(data2,
       function(a, b) {
         return parseInt(b.output) - parseInt(a.ouput);
       }, 1);
 
-      d3.json('../data/custom.geo.json').then(function(data1) {
+      d3.json('./data/custom.geo.json').then(function(data1) {
 
       let projection = d3.geoEqualEarth();
       projection.fitSize([graph_2_width, graph_2_height], data1);
