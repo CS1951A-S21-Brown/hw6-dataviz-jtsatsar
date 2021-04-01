@@ -7,6 +7,23 @@
         <link rel="stylesheet" href="main.css"/>
         <!--Feel free to add more CSS files as needed-->
         <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <style type="text/css">
+            /* Custom style rules go here. We've included a few, but feel free to write your own! */
+            svg {
+                display: grid;
+                margin: 0 auto;
+                font: 10px sans-serif;
+            }
+            .tooltip {
+                position: absolute;
+                font-size: 12px;
+                min-width: 100px;
+                padding: 10px;
+                width:  auto;
+                height: auto;
+                text-align: center;
+            }
+        </style>
     </head>
 <body>
     <div class="header">
@@ -16,11 +33,51 @@
     <div class="row">
         <div class="col-lg-6">
             <div id="graph1"></div>
-            <div id="graph2"></div><br/>
+            <!-- <svg id="legend" height='20px' width='20px'></svg> -->
+            <button type="button" class="btn btn-info" onclick="setData('sports_publishers', 'sports_sales', 'Sports')">Sports</button>
+            <button type="button" class="btn btn-info" onclick="setData('platform_publishers', 'platform_sales', 'Platform')">Platform</button>
+            <button type="button" class="btn btn-info" onclick="setData('racing_publishers', 'racing_sales', 'Racing')">Racing</button>
+            <button type="button" class="btn btn-info" onclick="setData('role_playing_publishers', 'role_playing_sales', 'Role Playing')">Role Playing</button>
+            <button type="button" class="btn btn-info" onclick="setData('puzzle_publishers', 'puzzle_sales', 'Puzzle')">Puzzle</button>
+            <button type="button" class="btn btn-info" onclick="setData('misc_publishers', 'misc_sales', 'Misc')">Misc</button>
+            <button type="button" class="btn btn-info" onclick="setData('shooter_publishers', 'shooter_sales', 'Shooter')">Shooter</button>
+            <button type="button" class="btn btn-info" onclick="setData('action_publishers', 'action_sales', 'Action')">Action</button>
+            <button type="button" class="btn btn-info" onclick="setData('simulation_publishers', 'simulation_sales', 'Simulation')">Simulation</button>
+            <button type="button" class="btn btn-info" onclick="setData('fighting_publishers', 'fighting_sales', 'Fighting')">Fighting</button>
+            <button type="button" class="btn btn-info" onclick="setData('adventure_publishers', 'adventure_sales', 'Adventure')">Adventure</button>
+            <button type="button" class="btn btn-info" onclick="setData('strategy_publishers', 'strategy_sales', 'Strategy')">Strategy</button>
+            <div id="graph3">
+            </div><br/>
         </div>
         <div class="col-lg-6">
-            <div id="graph3"></div>
+            <div id="graph2"></div>
         </div>
+        <p>"Written Questions:" </p>
+        <p>"1. The graph on the top left of the page answers the first question by displaying the top ten video games of all time, in order,
+          as determined by the number of global sales. I used global sales instead of the sales of any particular
+          region because the the boss didn't specify a region and could be dealing with multiple regions.
+          The map on the right of the page answers the 2nd question as to which genre is most popular in each region.
+            I aggregated the total number of sales per genre in a given region and displayed the top genre sold in each
+            region as a color on the map. The map at the bottom answers the 3rd question by displaying the top
+            publisher per genre, as determined by global sales. I aggregated the total number
+            of sales within a genre for each publisher and displayed
+            the top ten publishers for that genre so that the boss can see which publisher sold the best." </p>
+        <p>"2. D3 could be helpful if you had a large dataset and wanted to include dynamic labels.
+          It could also be helpful if you wanted to focus on accessability since D3 includes
+          a broad library of color schemes. D3 is also useful for having a wide variety of built in graph types
+          for complicated datasets, such as  map and flow type graphs.   " </p>
+        <p>"3. One reason D3 would not be the best tool because it can be needlessly complicated and would not
+          be an appropriate tool for less tech-savvy people to use. Another reason to not use is if
+          you wanted to do data visualization on a browser that doesn't support D3. Another reason could be if you
+          were working on a very large data visualization project and you needed to use a more modern framework that
+          handled more of the groundwork for you. " </p>
+        <p>"Accessible Data Visualization:" </p>
+        <p>"4. Colorblind and visually impaired users could have had trouble with this my graphs. It's also
+          possible that it wouldn't work for mobile-only users.  From the betterment article, I
+          learned also isn't compatible with accessibility add-ins like voice-over   " </p>
+        <p>"5. I could have made my fonts larger so that the visually impaired could read
+          my graphs better. I could have also done more research on appropriate
+          color schemes for colorblind people " </p>
     </div>
     <!--Feel free to add more JavaScript files as needed-->
     <script type="text/javascript" src="main.js"></script>
